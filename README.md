@@ -5,7 +5,7 @@ Photo Viewer Created by https://laptrinhvb.net
 [![LAPTRINHVB.NET](https://img.shields.io/badge/LAPTRINHVB.NET-Th%E1%BA%A3o%20Meo-yellowgreen)](https://laptrinhvb.net)
 
 
-![Lib Sample](https://github.com/nguyenthao1988/HOB_SCAN/blob/master/hob_scan.jpg?raw=true)
+![Lib Sample](https://github.com/nguyenthao1988/PhotoViewer/blob/master/photo_viewer.gif?raw=true)
 
 
 
