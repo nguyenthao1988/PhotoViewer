@@ -35,7 +35,7 @@
             // btn_close
             // 
             this.btn_close.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_close.Location = new System.Drawing.Point(808, 12);
+            this.btn_close.Location = new System.Drawing.Point(791, 115);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(55, 33);
             this.btn_close.TabIndex = 1;
@@ -52,6 +52,7 @@
             this.photoEditor1.Name = "photoEditor1";
             this.photoEditor1.Size = new System.Drawing.Size(891, 489);
             this.photoEditor1.TabIndex = 0;
+            this.photoEditor1.URL_IMAGE = "";
             // 
             // Form1
             // 
@@ -63,6 +64,7 @@
             this.ClientSize = new System.Drawing.Size(891, 489);
             this.Controls.Add(this.photoEditor1);
             this.Controls.Add(this.btn_close);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Photo Viewer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

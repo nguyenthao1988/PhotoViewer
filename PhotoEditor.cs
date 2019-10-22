@@ -147,8 +147,10 @@ namespace PhotoViewer
         {
             InitializeComponent();
             this.peCurrentImage.Properties.ContextButtonValueChanged += new ContextButtonValueChangedEventHandler(this.peCurrentImage_Properties_ContextButtonValueChanged);
+           // tileControl1.SelectionColor = Color.FromArgb(190, Color.Red); 
+            //flyoutPanel1.ShowPopup();
             //URL_IMAGE = @"C:\Users\nguyenthao\Desktop\PhotoViewer\PhotoViewer\PhotoViewer\PhotoViewer\bin\Debug\images";
-            
+
         }
 
         public void HiddenContextButton(int index, ContextItemVisibility isHidden)
@@ -214,17 +216,7 @@ namespace PhotoViewer
         {
             PictureEdit.Properties.ZoomPercent = Math.Min(((double)PictureEdit.Height / (double)img.Height) * 100, 100);
         }
-        //string workingFolderCore;
-        //protected virtual string WorkingFolder
-        //{
-        //    get { return workingFolderCore; }
-        //    set
-        //    {
-        //        if (workingFolderCore == value) return;
-        //        workingFolderCore = value;
-        //        InitializeImages();
-        //    }
-        //}
+     
         TileGroup group;
         protected virtual TileGroup TileGroupImages
         {
@@ -260,6 +252,7 @@ namespace PhotoViewer
             {
                 SetImage(e.Item.BackgroundImage);
                 this.IndexImage = group.Items.IndexOf(e.Item);
+                e.Item.Checked = true;                
             }
         }     
 
@@ -315,7 +308,7 @@ namespace PhotoViewer
                 {
                     tableLayoutPanel1.RowStyles[2].SizeType = SizeType.Absolute;
                     tableLayoutPanel1.RowStyles[2].Height = 110;
-                    tableLayoutPanel1.RowStyles[0].Height = 30;
+                    tableLayoutPanel1.RowStyles[0].Height = 25;
                     tileControl1.SelectedItem = group.Items[this.IndexImage];
                     myArgs = new PhotoViewerHideAndShowThumbnailEventArgs(false);
                 }               
@@ -420,7 +413,7 @@ namespace PhotoViewer
             TileGroup g = new TileGroup();
             foreach (Image img in Images)
             {
-                TileItem item = new TileItem() { BackgroundImage = img, BackgroundImageScaleMode = TileItemImageScaleMode.Squeeze, BackgroundImageAlignment = TileItemContentAlignment.MiddleCenter };
+                TileItem item = new TileItem() { BackgroundImage = img, BackgroundImageScaleMode = TileItemImageScaleMode.StretchHorizontal, BackgroundImageAlignment = TileItemContentAlignment.MiddleCenter };
 
 
                 g.Items.Add(item);
@@ -442,6 +435,7 @@ namespace PhotoViewer
             {
                 SetImage(e.Item.BackgroundImage);     
                        this.IndexImage = group.Items.IndexOf(e.Item);
+                e.Item.Checked = true;
             }
         }
 
@@ -492,7 +486,30 @@ namespace PhotoViewer
             PopupMenuPhotoViewerClickedEventArgs myArgs = new PopupMenuPhotoViewerClickedEventArgs(e.Item);
             this.PopupMenuPhotoViewer_Clicked(sender, myArgs);
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {            
+            this.PopupMenuPhotoViewer_Clicked(sender, null);
+        }
+
+        private void btn_max_Click(object sender, EventArgs e)
+        {
+            this.PopupMenuPhotoViewer_Clicked(sender, null);
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            this.PopupMenuPhotoViewer_Clicked(sender, null);
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            this.PopupMenuPhotoViewer_Clicked(sender, null);
+        }
     }
+
+
+
     public static class ImageHelper
     {
         public static string GetDimension(Image img)

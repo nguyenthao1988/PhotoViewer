@@ -144,6 +144,21 @@
   <ItemGroup>
     <None Include="Resources\closeheaderandfooter_32x32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_thewindow_theapplication_2872 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full_screen.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

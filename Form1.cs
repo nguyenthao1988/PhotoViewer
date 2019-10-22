@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,26 +19,51 @@ namespace PhotoViewer
             InitializeComponent();
             photoEditor1.HideAndShowThumbnail_Changed += PhotoEditor1_HideAndShowThumbnail_Changed;
             photoEditor1.PopupMenuPhotoViewer_Clicked += PhotoEditor1_PopupMenuPhotoViewer_Clicked;
-          
+
         }
 
         private void PhotoEditor1_PopupMenuPhotoViewer_Clicked(object sender, PopupMenuPhotoViewerClickedEventArgs e)
         {
-            if(e.ButtonNameClicked.Name == "btn_close")
+            if(sender is SimpleButton)
             {
-                this.Close();
-            }else if (e.ButtonNameClicked.Name == "btn_mini")
-            {
-                this.WindowState = FormWindowState.Minimized;
+                var control = (SimpleButton)sender;
+                if (control.Name == "btn_dong")
+                {
+                    this.Close();
+                }
+                else if (control.Name == "btn_mini")
+                {
+                    this.WindowState = FormWindowState.Minimized;
+                }
+                else if (control.Name == "btn_max")
+                {
+                    this.WindowState = FormWindowState.Normal;
+                }
             }
-            else if (e.ButtonNameClicked.Name == "btn_them")
+
+            else
             {
-              
+                if (e == null) { return; }
+                if (e.ButtonNameClicked.Name == "btn_close")
+                {
+                    this.Close();
+                }
+                else if (e.ButtonNameClicked.Name == "btn_mini")
+                {
+                    this.WindowState = FormWindowState.Minimized;
+                }
+                else if (e.ButtonNameClicked.Name == "btn_them")
+                {
+
+                }
+                else if (e.ButtonNameClicked.Name == "btn_xoa")
+                {
+
+                }
             }
-            else if (e.ButtonNameClicked.Name == "btn_xoa")
-            {
-               
-            }
+            
+
+           
         }
 
         private void PhotoEditor1_HideAndShowThumbnail_Changed(object sender, PhotoViewerHideAndShowThumbnailEventArgs e)
@@ -56,12 +82,16 @@ namespace PhotoViewer
         {
             photoEditor1.URL_IMAGE = @"images";
             formState.Maximize(this);
+
+
         }
 
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
     }
 
 
